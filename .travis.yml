@@ -1,8 +1,7 @@
 sudo: required
 dist: trusty
 addons:
-  apt:
-    sauce_connect: true
+  sauce_connect: true
 language: node_js
 node_js:
 - '6'
