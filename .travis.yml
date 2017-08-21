@@ -2,22 +2,10 @@ sudo: required
 dist: trusty
 addons:
   apt:
-    sources:
-    - google-chrome
-    packages:
-    - google-chrome-stable
     sauce_connect: true
 language: node_js
 node_js:
 - '6'
-before_script:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-- sleep 3
 install:
 - npm install
 script: npm test
-env:
-  global:
-  - secure: DP/oXpmUGQ/ALZttPA+w8RPF86RBuQpA4ippPY/rFq+NIxYyzN5Yh6PDESae60Lug70t/e0oTu0WLZpsZJ16GKnfrj19xSs/L89i4ibnCqn/Kw/N+t6snGL8wAxUzwYuy9Q7+XiEAvN3mRTt7cZuk1bRujF/+WwauBiWlGhZc6AlimlRXbXv2nh2BkFoVEx72+6Ev5O0KDLKVu86/R0boYIZDAwVyOB5JPhm9KBuhvTCDGoBdtHfI99R32IcQ0jg2LxCtqIPKTUU97IfXKadNvXHtI905Jqs4yMd1qdNdsh+UpaIv1Fjzl7lYaH/+KxS0gKUGFFmm9KNEKYCKEOhQxzeUjcsBz9O0T6uQVWoCsS4U5z1rFFS95Xa4isa8S8Y8rDWB4iRmf18Asnt0AokgyyfzG5umcrKD4mQAEFdJ5DetOQUSR2xdK0TOLyoYdaE3LiNDRgvi5pea/ScrXZWZhf//NS+alSY3v5mYL1IC5of/iBSb5zI2HGZVx7h3QmyxHPT0ta9l9MaRZG+4DOptQJ+pUHTpoNOD2QIzrwE0/M0Wj03L5pK+Th2zJAAET5pnakPHIXCdw9I2R2z76TsMik6I3wZ9LSz7GC/vH4HUVypfTm29cCZK2Nogha11Z8I4a2YnqLuQx+qj9dqGc5pQSamX5P+bONVfhytBqrX6/c=
-  - secure: W3bmh3kdBj6pI6ozC4Q9E1Yb7GFf/UmJo9lj1KAgIVJSuvWT/ICZHeoCH8oxmFdunoZ+h7e94Vw48VstOnakjL2w5G9nfy3wYf9zEDOCHVtfEbJo+oVVQwLFSJlSLg9KS0vyEcnxbph6a4D09fNLK5sea9KnTTyky/Bg34sIdmuHr6nn0bl29FHlUQbvi9ojLbyLJ925cDysoRwoFvMPGCDeoRzZuxTf2O3qFZHBnTBINI2I3kLJtX+JbJie+GS6MCvbXtyx/S7au/n7KF+xAEau9CHrr1J4hI0mbbMA1Bd+s8phVxNlBK8KGttylhmugYfULvpjrTGFLAjR4oi9izopjzoTx7ZS4aUjmfO/M9EgPgQzogPLYAG0lffqy/w/f278ovBly9tCA8bMHTlOJm+i/GNAkoSsDHge9T3X78qUecMxV1yxAAywBrWZsZ1lAMnNlLP7PkjtEdk66sIz5hXrX9m3grU8tQSYMOaFxUyyE9ywithBbaX2YlAhIKpD9V2lynJJCPTvE95pb4+guIcVFZ223mWhOFjd2d1FXnGJbyjjr/Ckqi5+d074FJy0xc4C1oP6fSAYH+Xpw1tEdu2XkAJDk7TluNyE0Qsjf/5agTy2h+0iqJcAr6itRXIN7iRkPjB6terQSGECdW2bsxlFTWkbSslDwdlzJhf3lcs=
