@@ -1,4 +1,5 @@
 if (process.env.TRAVIS) {
+    exports.config = {specs: ['todo-spec.js']};
     config.sauceUser = process.env.SAUCE_USERNAME;
     config.sauceKey = process.env.SAUCE_ACCESS_KEY;
     config.capabilities = {
