@@ -6,7 +6,9 @@ exports.config = {
     seleniumAddress: "http://" + username + ":"+ accessKey+"@ondemand.saucelabs.com:80/wd/hub",
     specs: ['todo-spec.js']
 };
+console.log("I'm outside!!!");
 if (process.env.TRAVIS) {
+    console.log("I'm inside!!!");
     exports.config.sauceUser = process.env.SAUCE_USERNAME;
     exports.config.sauceKey = process.env.SAUCE_ACCESS_KEY;
     exports.config.capabilities = {
