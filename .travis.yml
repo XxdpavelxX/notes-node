@@ -3,7 +3,7 @@ node_js:
   - "6"
 before_script:
   - "npm install -g protractor"
-  - "npm install -g webdriver -manager"
+  - "npm install -g webdriver-manager"
   - "webdriver-manager start"
 
 script: 'protractor conf.js'
