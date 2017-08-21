@@ -1,5 +1,9 @@
+var username = "dredbound";
+var accessKey = "f4536fc1-a1f5-4b55-9519-23facc376d53";
+
 exports.config = {
-    seleniumAddress: 'http://selenium.docker:4444/wd/hub',
+    // seleniumAddress: 'http://selenium.docker:4444/wd/hub',
+    seleniumAddress: "http://" + username + ":"+ accessKey+"@ondemand.saucelabs.com:80/wd/hub",
     specs: ['todo-spec.js']
 };
 if (process.env.TRAVIS) {
