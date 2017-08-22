@@ -1,18 +1,24 @@
-seleniumhub:
-  image: selenium/hub:2.53.0
+#seleniumhub:
+#  image: selenium/hub:2.53.0
+#  ports:
+#    - 4444:4444
+#
+#chromenode:
+#  image: selenium/node-chrome:2.53.0
+#  ports:
+#    - 5900
+#  links:
+#    - seleniumhub:hub
+
+selenium:
+  container_name: selenium
+  image: selenium/standalone-chrome-debug:3.1.0-astatine
+  shm_size: 1g
   ports:
     - 4444:4444
-
-# firefoxnode:
-#   image: selenium/node-firefox
-#   expose:
-#     - 5900
-#   links:
-#     - seleniumhub:hub
-
-chromenode:
-  image: selenium/node-chrome:2.53.0
-  ports:
-    - 5900
-  links:
-    - seleniumhub:hub
+    - 5900:5900
+  volumes:
+    - ${PWD}/edit/test/protractor/files:/edit/files
+    - ${PWD}/edit/test/protractor/images:/edit/images
+    - ${PWD}/poller/images:/poller/images
+    - /dev/shm:/dev/shm
