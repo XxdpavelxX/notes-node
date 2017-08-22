@@ -9,7 +9,8 @@ services:
 before_install:
   - docker -v
   - docker-compose -v
-  - docker-compose up -d
+  - docker-compose up -d selenium
+  - docker-compose up -d edit
   - docker ps
 install:
   - npm install
