@@ -33,7 +33,7 @@ services:
 
 before_install:
   - docker pull selenium/standalone-chrome
-  - docker build -t selenium/standalone-chrome .
+  - docker build -t selenium/standalone-chrome --file ./Dockefile .
   - docker run -d -P selenium/standalone-chrome
   - docker ps
 
