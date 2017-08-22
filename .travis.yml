@@ -7,9 +7,14 @@ services:
   - docker
 
 before_install:
-  - docker pull selenium/standalone-chrome
-  - docker run -d -p 127.0.0.1:4444:4444 selenium/standalone-chrome
+#  - docker pull selenium/standalone-chrome
+  - docker pull selenium/hub:latest
+  - docker pull selenium/node-chrome:latest
+  - docker run -d -p 4444:4444 --name selenium-hub selenium/hub:latest
+#  - docker run -d -p 127.0.0.1:4444:4444 selenium/standalone-chrome
+  - docker run -d --link selenium-hub:hub selenium/node-chrome:latest
   - docker ps
+seleniumAddress: 'http://localhost:4444/wd/hub'
 install:
   - npm install
 
