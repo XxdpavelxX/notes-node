@@ -7,6 +7,13 @@ services:
   - docker
 
 before_install:
+  - export GITHUB_TOKEN=7e3ed8f4add20a67697c35db4baaeecc76d49545
+  - export CURRENT_BRAND_TITLE=Cosmopolitan
+  - export CURRENT_SITE=cosmopolitan
+  - export CURRENT_LOCALE_LANGUAGE=en
+  - export CURRENT_LOCALE_COUNTRY_CODE=en
+  - export CURRENT_LOCALE_URL_PATH=en
+
   - docker -v
   - docker-compose -v
   - docker-compose up -d selenium
