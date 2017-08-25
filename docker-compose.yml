@@ -33,15 +33,7 @@
     ports:
       - 80
     volumes:
-      - ${PWD}/fre-hdm:/var/www
-    depends_on:
-      - diversion
-      - fre-redis
-      - hips
-      - master-record
-      - rover
-      - tyrion
-      - seekr
+      - ${PWD}/fre-hdm:/var/ww
     environment:
       - AMP_ELIGIBILITY=1
       - API_URLS=http://rover
