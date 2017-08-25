@@ -1,18 +1,39 @@
+#sudo: required
+#
+#language: node_js
+#  -6
+#
+#services:
+#  - docker
+#before_install:
+#  - docker -v
+#  - docker-compose -v
+#  - docker-compose up -d selenium
+#  - docker-compose up -d edit
+#  - docker ps
+#install:
+#  - npm install
+#
+#script:
+#  - npm test
+#####From https://github.com/Hearst-Hatchery/doody/blob/18f56131d0ec1d73fbee248c2328419d19ee695c/.travis.yml (Dimitar)
 sudo: required
-
-language: node_js
-  -6
 
 services:
   - docker
+env:
+  global:
+    - APP_NAME=doody
+    - SELENIUM_ADDRESS=$SELENIUM_ADDRESS
+  matrix:
+    - TEST_SUITE=smoke
+
 before_install:
-  - docker -v
-  - docker-compose -v
-  - docker-compose up -d selenium
-  - docker-compose up -d edit
-  - docker ps
-install:
-  - npm install
+  - wget https://hearst-hatchery.github.io/atlas/v3/vault.sh
+  - chmod +x vault.sh
+  - source vault.sh
+  - docker login -u hearst+travis -p $QUAY_TOKEN -e nobody@localhost quay.io
+  - (cd /tmp; curl -sSL http://hearst-hatchery.github.io/atlas/v2/deis_cli_install.sh | sh)
 
 script:
   - npm test
