@@ -33,7 +33,7 @@
     ports:
       - 80
     volumes:
-      - ${PWD}/fre-hdm:/var/ww
+      - ${PWD}/fre-hdm:/var/www
     environment:
       - AMP_ELIGIBILITY=1
       - API_URLS=http://rover
